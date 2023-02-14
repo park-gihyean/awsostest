@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>🎃</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Poor+Story&display=swap"
+        rel="stylesheet">
+        <style>
+            textarea{
+                text-align: center;
+                border-radius: 25px; 
+                border: 2px 5px 2px black;
+                resize: none;
+            }
+        </style>
+
+</head>
+
+<body style="font-family:'Poor Story',cursive;">
+    <h1 style="text-align:center; color: chocolate; margin-top: 30px; font-size: 50px;">[[${board.boardNo}]]번 게시글 수정🐈</h1>
+    
+    <form action="/board/boardUpdate" method="post">
+        <input type="hidden" name="boardNo" th:value="${board.boardNo}"/>
+        <h3 align="center" style="color:black; font-size: 25px;" >작성자 : [[${board.boardWriter}]]</h3>
+        <div align="center" style="font-family:'Poor Story',cursive;">
+            <h3 style="color:black; ">글 제목</h3>
+            <textarea name="boardTitle" style="width:60%; border-radius: 15px; border: 2px 5px 2px black;">[[${board.boardTitle}]]</textarea>
+            <h3 style="color:black;">글 내용</h3>
+            <textarea name="boardContent" style="width:80%; height: 300px; border-radius: 25px; border: 2px 5px 2px black;margin-bottom: 20px;">[[${board.boardContent}]]</textarea>
+        </div>
+        <div align="center">
+            <input type="submit" value="수정완료" style="background-color:#F3CA29; margin-top: 30px; font-family: 'Poor Story',cursive; border-radius: 20px; width: 100px; height:40px;" />
+            <hr style="width: 85%; height: 15px; background-color: #F3CA29; border: none; border-radius: 30px; margin-top: 20px;"/>
+            </div>
+    </form>
+    <div align = "center">
+        <a style="font-size: 25px; color: black;" href="/">🌇</a>
+        </div>
+   
+</body>
+
+</html>

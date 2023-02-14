@@ -1,0 +1,77 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>🎃</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Poor+Story&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        #btn {
+            float: right;
+            width: 100px;
+            height: 75px;
+            background-color: #CA4400;
+            border-radius: 20px;
+            box-shadow: 3px 3px 3px black;
+            transition-duration: 0.3s;
+            text-align: center;
+            color: black;
+            margin-left: 10px;
+            font-family: 'Poor Story', cursive;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 75px;
+            margin-top: 50px;
+        }
+
+        #btn:active {
+            margin-left: 5px;
+            margin-top: 5px;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body style=" background-image: url(https://cdn.pixabay.com/photo/2022/10/14/17/31/halloween-7521772_960_720.jpg); background-size: cover; background-repeat: no-repeat;"></body>
+    <div>
+        <a href="/">
+            <img style="width: 400px; height: 180px;"
+            src="https://pngimg.com/uploads/halloween/halloween_PNG121.png">
+            </a>
+     
+        <th:block th:if="${session.user} == null">
+            <a id="btn" href="/user/join" style="background-color: #47564C ;color: whitesmoke;">회원가입</a>
+            <a href="/user/login" id="btn" style="color: black;"> 로그인</a>
+
+        </th:block>
+
+        <th:block th:unless="${session.user} == null">
+            <a href="/user/deleteId" id="btn" style="background-color: #47564C;color: whitesmoke;">회원탈퇴</a>
+            <a href="/user/logout" id="btn">로그아웃</a>
+
+            <a href="/board/boardList" id="btn" style="background-color: #F2A05E;color: black;">게시판</a>
+
+            <br/>
+            <span  style="display: inline; font-family:'Poor Story',cursive; margin-left: 30px;font-size: 35px; font-weight: bold; color: #F49D5D">  [[${session.user.userName}]] </span>
+            <span style="font-family:'Poor Story',cursive; font-size: 30px;">님 환영합니다. </span>
+
+    
+            <div align="left">
+            <a href="/secret/halloween">
+                <img style="width: 120px; height:120px; bottom: 0px; position: fixed; z-index: 99999; float: left; "
+                    src="https://ifh.cc/g/gkqmVk.png"
+                    alt="cat" /></a></div>     
+        </th:block>
+
+    </div>
+
+
+
+</body>
+
+</html>

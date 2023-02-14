@@ -1,0 +1,83 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>🎃</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Poor+Story&display=swap"
+        rel="stylesheet">
+    <style>
+        #set {
+            font-family: 'Poor Story', cursive;
+        }
+
+        input {
+
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px whitesmoke solid;
+            background-color: transparent;
+            color: whitesmoke;
+            margin: 10px;
+            text-align: left;
+            font-family: 'Poor Story', cursive;
+            border-radius: 5px;
+
+        }
+
+        input:focus {
+            outline: none;
+
+            color: none;
+        }
+
+        input::placeholder {
+            color: gainsboro;
+            font-size: 18px;
+            text-align: center;
+            font-family: 'Poor Story', cursive;
+        }
+    </style>
+</head>
+
+<body
+    style=" background-image: url(https://cdn.pixabay.com/photo/2017/10/10/16/55/halloween-2837936_960_720.png); background-size: cover; background-repeat: no-repeat;">
+    <div id="set">
+        <div
+            style="color:white ; font-family: 'Dancing Script', cursive; font-size: 120px; float:right;margin-top: 280px; margin-right: 300px;">
+            <span>join</span>
+            <div style="margin-top: 30px;  text-align: right; color: whitesmoke;">
+                <form action="/user/join" method="post">
+                    <span style="font-size: 30px; font-family: 'Dancing Script', cursive;"> id : </span>
+                    <input style="width: 200px; font-size: 25px;" type="text" placeholder="아이디" name="userId" required/><br />
+                    <span style="font-size: 30px; font-family: 'Dancing Script', cursive;"> pw : </span>
+                    <input style="width: 200px; font-size: 25px;" type="text" placeholder="비밀번호" name="userPw" required /><br />
+                    <span style="font-size: 30px; font-family: 'Dancing Script', cursive;"> name : </span>
+                    <input style="width: 200px; font-size: 25px;" type="text" placeholder="이름" name="userName" required/><br />
+                    <span style="font-size: 30px; font-family: 'Dancing Script', cursive;"> address : </span>
+                    <input style="width: 200px; font-size: 25px;" type="text" placeholder="주소" name="userAddr" required/><br />
+                        <input style="border-top: 1px;
+                    border-left: 1px;
+                    border-right: 1px;
+                    border-radius: 20px;
+                    border-bottom: 1px black solid;
+                    color: black;
+                    font-size: 18px;
+                    text-align: center;
+                    margin-top: 15px;
+                    width: 80px;
+                    height: 30px; 
+                    background-color: whitesmoke;
+                    font-weight: bold;" type="submit" value="join" /><br />
+
+                    <a style="font-size: 25px; color: black;" href="/">🌇</a>
+            </div>
+        </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

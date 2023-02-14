@@ -1,0 +1,76 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>🎃</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Poor+Story&display=swap"
+        rel="stylesheet">
+    <style>
+        
+        input {
+
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px black solid;
+            background-color: transparent;
+            color: black;
+            margin: 10px;
+            font-size: 15px;
+            text-align: left;
+            font-family:'Poor Story',cursive;
+
+        }
+
+        input:focus {
+            outline: none;
+           
+            color: black;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div align="center" style="font-family: 'Dancing Script',cursive; font-size: 100px; margin-top: 80px;">
+        <a href = "/">
+        <img width="200px" src="https://pngimg.com/uploads/halloween/halloween_PNG132.png"></a>
+        <dr/>   
+        
+    </div>
+    <div align = "center" >
+    <span style="font-family: 'Dancing Script',cursive; font-size: 100px; text-align: center;">login</span>
+
+    <form action="/user/login" method="post" style="margin-top: 20px;">
+        <span style="font-size: 30px; font-family: 'Dancing Script', cursive;"> id : </span>
+        <input type="text" placeholder="아이디" name="userId" /><br />
+        <span style="font-size: 30px; font-family: 'Dancing Script', cursive;"> pw : </span>
+       <input type="text" placeholder="비밀번호" name="userPw" /><br />
+        <input style="border-top: 1px;
+        border-left: 1px;
+        border-right: 1px;
+        border-radius: 20px;
+        border-bottom: 1px black solid;
+        transition-duration: 0.3s;
+        color: whitesmoke;
+        margin: 10px;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 55px;
+        width: 100px;
+         height: 30px; 
+        background-color: black;
+         font-weight: bold;"
+
+         type="submit" value="login" />
+         <a style="font-size: 20px; color: black;" href="/user/join">📓</a>
+    </form>
+    
+</div>
+
+</body>
+
+</html>

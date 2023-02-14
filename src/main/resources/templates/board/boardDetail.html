@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>🎃</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Poor+Story&display=swap"
+        rel="stylesheet">
+        <style>
+            
+            textarea{
+                text-align: center;
+                border-radius: 25px; 
+                border: 2px 5px 2px black;
+                resize: none;
+            }
+        </style>
+</head>
+
+<body style="font-family:'Poor Story',cursive;">
+    <h1 style="text-align:center; color: chocolate; margin-top: 30px; font-size: 50px;">[[${board.boardNo}]]번 게시글 상세보기🐈</h1>
+    
+        <h3 align="center" style="color:black; font-size: 25px;">작성자 : [[${board.boardWriter}]]</h3>
+        <div align="center" style="font-family:'Poor Story',cursive;">
+            <h3 style="color:black; ">글 제목</h3>
+            <textarea name="boardTitle" style="width:60%; border-radius: 15px; border: 2px 5px 2px black;" readonly>[[${board.boardTitle}]]</textarea>
+            <h3 style="color:black;">글 내용</h3>
+            <textarea name="boardContent" style="width:80%; height: 300px; border-radius: 25px; border: 2px 5px 2px black;margin-bottom: 20px;" readonly>[[${board.boardContent}]]</textarea>
+        </div>
+        <div align="center">
+        <a href="/board/boardList" style="font-size: 25px;">📃</a>
+       
+        
+        <th:block th:if ="${board.boardWriter}==${session.user.userId}">
+            <!-- 글 작성자와 로그인한 사용자의 이름이 같을 경우 -->
+            <a style="font-size: 28px; margin-left: 5px;margin-right: 5px;" th:href="@{/board/boardUpdate(boardNo=${board.boardNo})}">✍</a>
+            <a style="font-size: 25px;" th:href="@{/board/boardRemove(boardNo=${board.boardNo})}">❌</a>
+        
+        </th:block>
+        <hr style="width: 85%; height: 15px; background-color: #F3CA29; border: 2px ;border-radius: 30px; margin-top: 20px;"/>
+        </div>
+        <div align = "center">
+            <a style="font-size: 25px; color: black;" href="/">🌇</a>
+            </div>
+   
+</body>
+
+</html>
